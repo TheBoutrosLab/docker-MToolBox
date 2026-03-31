@@ -12,7 +12,7 @@ RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list \
    build-essential \
    libhts-dev \
    libtool \
-   libpcre++-dev \
+   libpcre2-dev \
    llvm-dev \
    pkg-config \
    uuid-dev \
