@@ -1,4 +1,4 @@
-FROM ubuntu:20.04
+FROM ubuntu:24.04
 
 # Install utilities
 RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list \
