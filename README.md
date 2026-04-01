@@ -1,51 +1,52 @@
-# docker-tool_name
-Template Repository for the Boutros Lab Dockerfiles based on mambaforge base image.
+# docker-MToolBox
 
-The base image is pulled from https://hub.docker.com/r/condaforge/mambaforge
-
-# Documentation
-Docker introduction [here](https://uclahs-cds.atlassian.net/wiki/spaces/BOUTROSLAB/pages/3190419/Docker+Introduction)
-
-Dockerfile Best Practices [here](https://uclahs-cds.atlassian.net/wiki/spaces/BOUTROSLAB/pages/3189770/Dockerfile+Best+Practices)
-
-Docker image versioning standard [here](https://uclahs-cds.atlassian.net/wiki/spaces/BOUTROSLAB/pages/3188472/Docker+image+versioning+standardization)
-
+Dockerfile for installing MToolBox.
 
 # Version
 | Tool | Version |
 |------|---------|
-|tool_name| X.X.X|
-|tool_name_2|X.X.X|
+| MToolBox | 1.2.1 (`b52269e98c694d3e4ba25eb80f27b74b48985ddb`) |
+| Python | 2.7.18 |
+| Anaconda | 2-4.2.0 |
+| zlib | 1.3.1 |
+| SAMtools | 1.3 |
+| MUSCLE | 3.8.31_i86linux64 |
+| GMAP / GSNAP | 2021-03-08 |
 
 ---
 
+## Notes
+
+- The image downloads the upstream MToolBox source archive at build time and replaces the bundled installer with the checked-in [install.sh](./install.sh).
+
 ## Discussions
 
-- [Issue tracker](<link-to-issues-page>) to report errors and enhancement ideas.
-- Discussions can take place in [docker-<tool> Discussions](<link-to-discussions>)
-- [docker-<tool> pull requests](<link-to-pull-requests>) are also open for discussion
+- [Issue tracker](https://github.com/TheBoutrosLab/docker-MToolBox/issues) to report errors and enhancement ideas.
+- Discussions can take place in [docker-MToolBox Discussions](https://github.com/TheBoutrosLab/docker-MToolBox/discussions)
+- [docker-MToolBox pull requests](https://github.com/TheBoutrosLab/docker-MToolBox/pulls) are also open for discussion
 
 ---
 
 ## Contributors
 
-Please see list of [Contributors](<link-to-contributors-insights>) at GitHub.
+Please see list of [Contributors](https://github.com/TheBoutrosLab/docker-MToolBox/graphs/contributors) at GitHub.
 
 ---
 
 ## References
 
-1. Tool specific references can be listed here
+1. [MToolBox GitHub repository](https://github.com/mitoNGS/MToolBox)
+2. [Calabrese C, Simone D, Diroma MA, et al. MToolBox: a highly automated pipeline for heteroplasmy annotation and prioritization analysis of human mitochondrial variants in high-throughput sequencing. Bioinformatics. 2014;30(21):3115-3117.](https://pubmed.ncbi.nlm.nih.gov/25028726/)
 
 ---
 
 ## License
 
-Author: Name1, Name2
+Author: Yash Patel
 
-[docker repo name] is licensed under the GNU General Public License version 2. See the file LICENSE for the terms of the GNU GPL license.
+`docker-MToolBox` is licensed under the GNU General Public License version 2. See the file LICENSE for the terms of the GNU GPL license.
 
-<one line to give the program's name and a brief idea of what it does.>
+`docker-MToolBox` provides a Dockerfile for  creating an image with MToolBox and its legacy dependency stack.
 
 Copyright (C) 2026 Sanford Burnham Prebys Medical Discovery Institute ("Boutros Lab") All rights reserved.
 
