@@ -6,6 +6,7 @@ Dockerfile for installing MToolBox.
 | Tool | Version |
 |------|---------|
 | MToolBox | 1.2.1 (`b52269e98c694d3e4ba25eb80f27b74b48985ddb`) |
+| Python | 2.7.18 |
 | Anaconda | 2-4.2.0 |
 | zlib | 1.3.1 |
 | SAMtools | 1.3 |
