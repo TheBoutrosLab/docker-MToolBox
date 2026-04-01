@@ -22,8 +22,29 @@ RUN sed -i 's/# \(.*multiverse$\)/\1/g' /etc/apt/sources.list \
    git \
    libncurses5-dev \
    libncursesw5-dev \
+   libbz2-dev \
+   libffi-dev \
+   libgdbm-dev \
+   libreadline-dev \
+   libsqlite3-dev \
+   libssl-dev \
+   xz-utils \
    ca-certificates \
    &&  rm -rf /var/lib/apt/lists/*
+
+ARG PYTHON2_VERSION=2.7.18
+
+WORKDIR /tmp/
+RUN wget https://www.python.org/ftp/python/${PYTHON2_VERSION}/Python-${PYTHON2_VERSION}.tgz \
+    && tar -xzf Python-${PYTHON2_VERSION}.tgz \
+    && cd Python-${PYTHON2_VERSION} \
+    && ./configure \
+    && make -j"$(nproc)" \
+    && make altinstall \
+    && ln -sf /usr/local/bin/python2.7 /usr/local/bin/python2 \
+    && ln -sf /usr/local/bin/python2.7 /usr/local/bin/python \
+    && cd / \
+    && rm -rf /tmp/Python-${PYTHON2_VERSION} /tmp/Python-${PYTHON2_VERSION}.tgz
 
 WORKDIR /src/
 RUN wget https://github.com/mitoNGS/MToolBox/archive/b52269e98c694d3e4ba25eb80f27b74b48985ddb.zip \
