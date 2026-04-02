@@ -52,7 +52,7 @@ RUN wget https://github.com/mitoNGS/MToolBox/archive/b52269e98c694d3e4ba25eb80f2
     && mv MToolBox-b52269e98c694d3e4ba25eb80f27b74b48985ddb MToolBox \
     && chmod 777 -R /src/MToolBox/
 
-ARG GSNAP_VERSION="2021-03-08"
+ARG GSNAP_VERSION="2023-12-01"
 ARG ANACONDA_VERSION="2-4.2.0"
 ARG ZLIB_VERSION="1.3.1"
 
