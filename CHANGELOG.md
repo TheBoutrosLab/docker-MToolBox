@@ -8,6 +8,12 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ---
 
 ## [Unreleased]
+### Changed
+- Update GSNAP version to `2023-12-01`
+
+---
+
+## [1.2.1-b52269e] - 2026-04-01
 ### Added
 - Dockerfile and installation script for MToolBox
 
