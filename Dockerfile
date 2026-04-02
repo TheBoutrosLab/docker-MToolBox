@@ -52,13 +52,17 @@ RUN wget https://github.com/mitoNGS/MToolBox/archive/b52269e98c694d3e4ba25eb80f2
     && mv MToolBox-b52269e98c694d3e4ba25eb80f27b74b48985ddb MToolBox \
     && chmod 777 -R /src/MToolBox/
 
+ARG GSNAP_VERSION="2021-03-08"
+ARG ANACONDA_VERSION="2-4.2.0"
+ARG ZLIB_VERSION="1.3.1"
+
 WORKDIR /src/MToolBox/
 COPY install.sh ./
-RUN ./install.sh -g 2021-03-08 -a 2-4.2.0 -z 1.3.1 -i anaconda \
-    && ./install.sh -g 2021-03-08 -a 2-4.2.0 -z 1.3.1 -i zlib \
-    && ./install.sh -g 2021-03-08 -a 2-4.2.0 -z 1.3.1 -i samtools \
-    && ./install.sh -g 2021-03-08 -a 2-4.2.0 -z 1.3.1 -i muscle \
-    && ./install.sh -g 2021-03-08 -a 2-4.2.0 -z 1.3.1 -i gsnap \
+RUN ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i anaconda \
+    && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i zlib \
+    && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i samtools \
+    && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i muscle \
+    && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i gsnap \
     && rm -r ./gmapdb \
     && rm -r ./genome_fasta \
     && rm -r ./test \
