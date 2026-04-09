@@ -8,6 +8,10 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 ---
 
 ## [Unreleased]
+
+---
+
+## [1.2.1-b52269e_GSNAP-2023-12-01] - 2026-04-09
 ### Changed
 - Update GSNAP version to `2023-12-01`
 
