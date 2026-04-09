@@ -11,7 +11,7 @@ Dockerfile for installing MToolBox.
 | zlib | 1.3.1 |
 | SAMtools | 1.3 |
 | MUSCLE | 3.8.31_i86linux64 |
-| GMAP / GSNAP | 2021-03-08 |
+| GMAP / GSNAP | 2023-12-01 |
 
 ---
 
