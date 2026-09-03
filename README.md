@@ -11,13 +11,15 @@ Dockerfile for installing MToolBox.
 | zlib | 1.3.1 |
 | SAMtools | 1.3 |
 | MUSCLE | 3.8.31_i86linux64 |
-| GMAP / GSNAP | 2023-12-01 |
+| GMAP / GSNAP | 2025-04-19 |
 
 ---
 
 ## Notes
 
 - The image downloads the upstream MToolBox source archive at build time and replaces the bundled installer with the checked-in [install.sh](./install.sh).
+- The GSNAP source release is pinned by SHA-256 checksum. The 2025-04-19 release correctly emits split SAM records for alignments that cross the circular mitochondrial origin.
+- Run `tests/circular-origin-smoke.sh` inside the built image to verify that a synthetic origin-crossing read produces in-bounds primary and supplementary alignments.
 
 ## Discussions
 
