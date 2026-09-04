@@ -14,9 +14,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Verify the GMAP/GSNAP source archive against its pinned SHA-256 checksum during installation.
 - Build GMAP/GSNAP in parallel to reduce container build time.
 
-### Added
-- Add a synthetic circular-origin regression smoke test.
-
 ---
 
 ## [1.2.1-b52269e_GSNAP-2023-12-01] - 2026-04-09
