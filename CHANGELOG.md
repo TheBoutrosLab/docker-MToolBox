@@ -11,6 +11,13 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ---
 
+## [1.2.1-b52269e_GSNAP-2025-04-19] - 2026-09-04
+
+### Changed
+- Update GMAP/GSNAP to `2025-04-19` to correct SAM representation of alignments crossing the circular mitochondrial origin
+
+---
+
 ## [1.2.1-b52269e_GSNAP-2023-12-01] - 2026-04-09
 ### Changed
 - Update GSNAP version to `2023-12-01`
@@ -22,4 +29,4 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 - Dockerfile and installation script for MToolBox
 
 ### Changed
-- Update the base image to `ubuntu:24.04`.
+- Update the base image to `ubuntu:24.04`
