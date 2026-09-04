@@ -53,7 +53,6 @@ RUN wget https://github.com/mitoNGS/MToolBox/archive/b52269e98c694d3e4ba25eb80f2
     && chmod 777 -R /src/MToolBox/
 
 ARG GSNAP_VERSION="2025-04-19"
-ARG GSNAP_SHA256="68dd820ba14c97774e8619f1ccfdd60587de3f85d2e516f214548739800bd5a5"
 ARG ANACONDA_VERSION="2-4.2.0"
 ARG ZLIB_VERSION="1.3.1"
 
@@ -63,7 +62,7 @@ RUN ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -
     && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i zlib \
     && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i samtools \
     && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i muscle \
-    && ./install.sh -g ${GSNAP_VERSION} -c ${GSNAP_SHA256} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i gsnap \
+    && ./install.sh -g ${GSNAP_VERSION} -a ${ANACONDA_VERSION} -z ${ZLIB_VERSION} -i gsnap \
     && rm -r ./gmapdb \
     && rm -r ./genome_fasta \
     && rm -r ./test \

@@ -15,14 +15,13 @@ FOR FULL INSTALLATION ON OSX:
 ./install.sh -o
 
 TO CHANGE SOME OF THE SOFTWARE VERSIONS/KMER PARAMETER DURING THE FULL INSTALLATION OF MTOOLBOX:
-./install.sh -g <gsnap_version> -c <gsnap_sha256> -z <zlib_version> -m <muscle_file> -s <samtools_version> -k <kmer_to_build_gsnap_db>
+./install.sh -g <gsnap_version> -z <zlib_version> -m <muscle_file> -s <samtools_version> -k <kmer_to_build_gsnap_db>
 
 TO UPDATE ONLY ONE SPECIFIC SOTWARE:
 ./install.sh -i <software_name>
 
 followed, in case, by one of the options to specify the software version/kmer parameter:
 	-g	GSNAP version: default is 2015-12-31.v7
-	-c	SHA-256 checksum for the GSNAP source archive (optional)
 	-a	Anaconda version: default is 2-2.5.0
 	-z	Zlib version: default is 1.2.11
 	-m 	MUSCLE version: default is muscle3.8.31_i86linux64
@@ -38,7 +37,6 @@ Help options:
 }
 
 gsnap_gmap_version=2015-12-31.v7
-gsnap_gmap_sha256=
 anaconda_version=2-2.5.0
 anaconda_file=Anaconda$anaconda_version-Linux-x86_64.sh
 muscle_file=muscle3.8.31_i86linux64
@@ -48,7 +46,7 @@ kmer=15
 opsys=linux
 software_install=all
 
-while getopts ":hg:c:s:m:a:z:k:i:o" opt; do
+while getopts ":hg:s:m:a:z:k:i:o" opt; do
 	case $opt in
 		h)
 			usage
@@ -56,9 +54,6 @@ while getopts ":hg:c:s:m:a:z:k:i:o" opt; do
 			;;
 		g)
 			gsnap_gmap_version=$OPTARG
-			;;
-		c)
-			gsnap_gmap_sha256=$OPTARG
 			;;
 		s)
 			samtools_version=$OPTARG
@@ -176,17 +171,11 @@ gsnap_install() {
     else
     	download $gsnap_gmap_url $gsnap_gmap_file
     fi
-	if [ -n "$gsnap_gmap_sha256" ]; then
-		if ! echo "$gsnap_gmap_sha256  $gsnap_gmap_file" | sha256sum -c -; then
-			echo "GSNAP source archive checksum verification failed" >&2
-			exit 1
-		fi
-	fi
 	tar xvzf $gsnap_gmap_file &&
 	rm $gsnap_gmap_file
 	cd gmap*
 	./configure --prefix=$MTOOLBOX_BIN/gmap
-	make -j"$(nproc)"
+	make
 	make install
 	echo "Installing gmap $gsnap_gmap_version... Done."
 	popd

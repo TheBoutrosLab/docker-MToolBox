@@ -18,7 +18,6 @@ Dockerfile for installing MToolBox.
 ## Notes
 
 - The image downloads the upstream MToolBox source archive at build time and replaces the bundled installer with the checked-in [install.sh](./install.sh).
-- The GSNAP source release is pinned by SHA-256 checksum. The 2025-04-19 release correctly emits split SAM records for alignments that cross the circular mitochondrial origin.
 
 ## Discussions
 

@@ -11,8 +11,6 @@ This project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.htm
 
 ### Changed
 - Update GMAP/GSNAP to `2025-04-19` to correct SAM representation of alignments crossing the circular mitochondrial origin.
-- Verify the GMAP/GSNAP source archive against its pinned SHA-256 checksum during installation.
-- Build GMAP/GSNAP in parallel to reduce container build time.
 
 ---
 
